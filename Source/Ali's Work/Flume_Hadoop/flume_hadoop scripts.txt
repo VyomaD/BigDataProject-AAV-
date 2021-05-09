@@ -1,0 +1,35 @@
+Commands to Start Apache Flume and Hadoop Services
+
+1.	Starting Hadoop services
+
+          start-all.sh
+
+
+2.	URL to access Hadoop via web interface
+
+       http://localhost:50070
+
+3.	Create a new directory in Hadoop file system
+
+        hadoop fs -mkdir/ <Your Folder Name> 
+
+       e.g.
+              hadoop fs -mkdir /twitter_data
+
+4.	Starting Flume Agent
+
+          ./bin/flume-ng  agent -n <HDFS AGENT NAME> -c conf -f <FLUME CONFIG FILE>    
+          -Dflume.root.logger=INFO,console
+
+e.g.
+         ./bin/flume-ng  agent -n hdfs-agent -c conf -f conf/twitter-flume-hdfs.conf --name TwitterAgent -Dflume.root.logger=INFO,console
+
+
+
+
+flume-ng agent --conf /usr/local/hadoop-env/apache-flume-1.6.0-bin/lib/flume-twitter-source-1.6.0.jar -f conf/twitter-flume-hdfs.conf Dflume.root.logger=DEBUG,console -n agent
+
+
+
+
+

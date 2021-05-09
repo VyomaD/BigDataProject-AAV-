@@ -1,0 +1,17 @@
+hadoop fs -mkdir /user/cloudera/tweets
+It will create a directory named tweets under user/cloudera in hadoop file system
+hadoop fs -mkdir /user/cloudera/tweets/input
+We will create a sub directory named as input to save our input file here
+hadoop fs -put text.txt /user/cloudera/tweets/input
+It will save the text file in input directory
+hadoop jar WordFreqCount.jar WordCount /user/cloudera/tweets/input /user/cloudera/tweets/output
+It will run the jar file and count word in our input file and store them to ouput which we can either check through 
+HUE or we can run the command below
+hadoop fs -cat /user/cloudera/tweets/ouput/part-r-00000
+
+
+
+hadoop jar WordFreqaCount.jar WordCount /user/cloudera/tweets/input /user/cloudera/tweets/outputa
+It will run the jar file and count word starting with a letter 'a' in our input file and store them to ouput which 
+we can either check through HUE or we can run the command below
+hadoop fs -cat /user/cloudera/tweets/ouputa/part-r-00000
